@@ -4,7 +4,7 @@ import { USER_COLLECTION } from '../../constant/user.constant';
 import { type Model, Types } from 'mongoose';
 import type { UserDocument } from '../../models/user.model';
 import type { CreateUserProps } from '../../interfaces/user.interface';
-import { encryption } from '../../../utils/encryption.utils';
+import { encryption } from '../../utils/encryption.utils';
 
 @Injectable()
 export class UserService {

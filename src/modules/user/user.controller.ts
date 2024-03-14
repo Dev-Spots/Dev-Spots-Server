@@ -9,9 +9,9 @@ import {
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserValidator } from './user.validation';
-import { encryption } from '../../../utils/encryption.utils';
+import { encryption } from '../../utils/encryption.utils';
 import ResponseWriter from '../../base/response.base';
-import { jwtUtils } from '../../../utils/jwt.utils';
+import { jwtUtils } from '../../utils/jwt.utils';
 import type { Request } from 'express';
 
 @Controller('user')
