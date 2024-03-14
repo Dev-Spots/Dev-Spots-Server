@@ -1,7 +1,8 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { USER_COLLECTION } from "../constant/user.constant";
 import type { Document } from "mongoose";
 
-@Schema({ timestamps: true, collection: "Users" })
+@Schema({ timestamps: true, collection: USER_COLLECTION })
 export class User {
   @Prop({ required: true, type: String })
   public name: string;

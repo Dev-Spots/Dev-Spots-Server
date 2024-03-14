@@ -8,6 +8,7 @@ import { config } from 'dotenv';
 import { MorganModule, MorganInterceptor } from 'nest-morgan';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { UrlEncodedParser } from '../middlewares/urlEncodedParser.middleware';
+import { UserModule } from '../modules/user/user.module';
 
 config();
 
@@ -17,6 +18,7 @@ config();
       waitQueueTimeoutMS: 1000 * 30,
     }),
     MorganModule,
+    UserModule
   ],
   controllers: [],
   providers: [

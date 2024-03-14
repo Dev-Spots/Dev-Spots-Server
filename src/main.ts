@@ -4,6 +4,9 @@ import { GLOBAL_PREFIX } from "../constant";
 import { ForbiddenException } from "@nestjs/common";
 import helmet from "helmet";
 import { AllExceptionsFilter } from "../middlewares/errorHandler.middleware";
+import { config } from "dotenv";
+
+config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -30,6 +33,9 @@ async function bootstrap() {
   });
 
   app.setGlobalPrefix(GLOBAL_PREFIX);
-  await app.listen(3001);
+  const port = process.env.PORT || 3001;
+
+  console.log(`${new Date().toISOString()} application start on port ${port}`);
+  await app.listen(port);
 }
 bootstrap();

@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { PROFILE_STATUS } from '../constant/profile.constant';
+import { PROFILE_COLLECTION, PROFILE_STATUS } from '../constant/profile.constant';
 import { type Document, Types } from 'mongoose';
 import type {
   EducationExperience,
@@ -8,7 +8,7 @@ import type {
   Social,
 } from '../interfaces/profile.interfaces';
 
-@Schema({ timestamps: true, collection: 'Profiles' })
+@Schema({ timestamps: true, collection: PROFILE_COLLECTION })
 export class Profile {
   @Prop({ required: true, unique: true, type: Types.ObjectId, ref: 'Users' })
   public userId: Types.ObjectId;
