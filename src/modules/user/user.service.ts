@@ -3,6 +3,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { USER_COLLECTION } from '../../constant/user.constant';
 import { type Model, Types } from 'mongoose';
 import type { UserDocument } from '../../models/user.model';
+import type { CreateUserProps } from '../../interfaces/user.interface';
+import { encryption } from '../../../utils/encryption.utils';
 
 @Injectable()
 export class UserService {
@@ -17,5 +19,13 @@ export class UserService {
 
   public async findOneByEmail(email: string) {
     return (await this.userRepo.findOne({ email })) as UserDocument | null;
+  }
+
+  public async createOneUser({ name, password, email }: CreateUserProps) {
+    return this.userRepo.create({
+      email,
+      password: encryption.hashData(password),
+      name,
+    });
   }
 }
