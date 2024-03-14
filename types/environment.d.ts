@@ -6,6 +6,8 @@ declare global {
       DATABASE_URL: string;
       SECRET: string;
       PORT: string;
+      ENCRYPTION_KEY: string;
+      CORS_LIST: string;
     }
   }
 }

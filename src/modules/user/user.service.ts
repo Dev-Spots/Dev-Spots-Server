@@ -12,6 +12,10 @@ export class UserService {
   ) {}
 
   public async findOneById(_id: Types.ObjectId) {
-    return await this.userRepo.findById(_id);
+    return (await this.userRepo.findById(_id)) as UserDocument | null;
+  }
+
+  public async findOneByEmail(email: string) {
+    return (await this.userRepo.findOne({ email })) as UserDocument | null;
   }
 }

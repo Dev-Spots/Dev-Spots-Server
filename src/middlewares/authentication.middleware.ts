@@ -8,7 +8,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { USER_COLLECTION } from '../constant/user.constant';
 import { type Model, Types, isValidObjectId } from 'mongoose';
 import type { UserDocument } from '../models/user.model';
-import { jwtUtils } from '../utils/jwt.utils';
+import { jwtUtils } from '../../utils/jwt.utils';
 
 @Injectable()
 export class Authentication implements NestMiddleware {

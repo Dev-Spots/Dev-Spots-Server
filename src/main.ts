@@ -1,9 +1,9 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
-import { GLOBAL_PREFIX } from "../constant";
+import { GLOBAL_PREFIX } from "./constant";
 import { ForbiddenException } from "@nestjs/common";
 import helmet from "helmet";
-import { AllExceptionsFilter } from "../middlewares/errorHandler.middleware";
+import { AllExceptionsFilter } from "./middlewares/errorHandler.middleware";
 import { config } from "dotenv";
 
 config();

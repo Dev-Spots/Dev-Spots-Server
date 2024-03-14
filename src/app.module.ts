@@ -7,8 +7,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { config } from 'dotenv';
 import { MorganModule, MorganInterceptor } from 'nest-morgan';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { UrlEncodedParser } from '../middlewares/urlEncodedParser.middleware';
-import { UserModule } from '../modules/user/user.module';
+import { UrlEncodedParser } from './middlewares/urlEncodedParser.middleware';
+import { UserModule } from './modules/user/user.module';
 
 config();
 

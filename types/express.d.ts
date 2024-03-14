@@ -1,4 +1,4 @@
-import type { UserDocument } from "../models/user.model";
+import type { UserDocument } from "../src/models/user.model";
 
 export {};
 
