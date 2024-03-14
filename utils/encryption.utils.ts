@@ -1,5 +1,8 @@
-import { hashSync, compareSync } from "bcryptjs";
-import { AES, enc } from "crypto-ts";
+import { hashSync, compareSync } from 'bcryptjs';
+import { AES, enc } from 'crypto-ts';
+import { config } from 'dotenv';
+
+config();
 
 class Encryption {
   private readonly key = process.env.ENCRYPTION_KEY;
@@ -12,11 +15,11 @@ class Encryption {
   }
 
   public encrypt(data: string): string {
-    return AES.encrypt(data.replace(/\s/g, "_"), this.key).toString();
+    return AES.encrypt(data.replace(/\s/g, '_'), this.key).toString();
   }
 
   public decrypt(data: string): string {
-    return AES.decrypt(data, this.key).toString(enc.Utf8).replace(/_/g, " ");
+    return AES.decrypt(data, this.key).toString(enc.Utf8).replace(/_/g, ' ');
   }
 }
 

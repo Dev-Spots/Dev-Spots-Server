@@ -5,6 +5,9 @@ import {
   verify,
   decode,
 } from 'jsonwebtoken';
+import { config } from 'dotenv';
+
+config();
 
 export interface JwtValue extends JwtPayload {
   _id: string;

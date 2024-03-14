@@ -1,6 +1,6 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { USER_COLLECTION } from "../constant/user.constant";
-import type { Document } from "mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { USER_COLLECTION } from '../constant/user.constant';
+import type { Document } from 'mongoose';
 
 @Schema({ timestamps: true, collection: USER_COLLECTION })
 export class User {
@@ -13,10 +13,10 @@ export class User {
   @Prop({ required: true, type: String })
   public password: string;
 
-  @Prop({ required: false, default: "" })
+  @Prop({ required: false, default: '', type: String })
   public avatarImg: string;
 
-  @Prop({ required: false, default: "" })
+  @Prop({ required: false, default: '', type: String })
   public avatarImgId: string;
 }
 
